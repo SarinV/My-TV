@@ -1,0 +1,37 @@
+name: Update IPTV List
+
+on:
+  schedule:
+    - cron: '0 */2 * * *' # 每2小时执行一次 (UTC时间)
+  workflow_dispatch:      # 允许手动点击按钮触发
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        pip install requests
+
+    - name: Run script
+      run: python main.py
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Action"
+        git config --global user.email "action@github.com"
+        git add my_tv.m3u
+        # 只有当文件发生变化时才提交
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Auto update IPTV list" && git push)

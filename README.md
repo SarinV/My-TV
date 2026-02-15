@@ -2,7 +2,7 @@
 常看IPTV直播源，拉取自vbskycn/iptv，感谢大佬
 # IPTV Auto-Filter (Personal)
 
-![GitHub Action Status](https://github.com/您的GitHub用户名/仓库名/workflows/Update%20IPTV%20List/badge.svg)
+![GitHub Action Status](https://github.com/SarinV/My-TV/workflows/Update%20IPTV%20List/badge.svg)
 
 这是一个基于 GitHub Actions 的自动化脚本，用于从公开的 IPTV 源中提取特定频道（央视及部分省级卫视），生成轻量级的个人播放列表。
 
@@ -25,7 +25,7 @@
 
 建议在 Jellyfin、TiviMate 或 TVBox 中使用以下加速链接（国内网络优化）：
 
-https://mirror.ghproxy.com/https://raw.githubusercontent.com/SarinV/My-TV/main/my_tv.m3u
+https://gh-proxy.com/raw.githubusercontent.com/SarinV/My-TV/main/my_tv.m3u
 
 
 *(如果您不需要加速，可直接使用 GitHub Raw 链接)*
